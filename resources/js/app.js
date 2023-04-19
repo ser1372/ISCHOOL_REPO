@@ -1,11 +1,12 @@
 import './bootstrap';
-import Testim from '@/Components/Testim.vue';
 import { createApp } from 'vue/dist/vue.esm-bundler.js';
+import axios from 'axios';
 import '../css/app.css';
+import Header from '@/Components/Header.vue';
 
 const app = createApp({});
 
-app.component('testim',Testim);
+app.component('header-component',Header);
 
 app.mount('#app');
 

@@ -6,9 +6,11 @@
         <title>Ischool</title>
     </head>
     <body>
-        <div id="app" class="text-red">
-            <testim></testim>
+    <div id="app">
+        <header-component></header-component>
+        <div class="max-w-7xl mx-auto pt-36 md:pt-40 px-3 h-full">
         </div>
+    </div>
         @vite('resources/js/app.js')
     </body>
 </html>
