@@ -1,8 +1,19 @@
+<script setup>
+import { useI18n } from 'vue-i18n';
+
+const { locale } = useI18n();
+
+const switchLang = (lang) =>{
+    locale.value = lang;
+}
+
+</script>
+
 <template>
-    <div class="flex mt-4 lg:mt-0">
+    <div>
         <ul class="flex gap-4">
-            <i18n-switch locale="ua">UA</i18n-switch>
-            <i18n-switch locale="en">EN</i18n-switch>
+            <li :class="{ 'text-purple-500': locale === 'ua' }" class="cursor-pointer" @click="switchLang('ua')">UA</li>
+            <li :class="{ 'text-purple-500': locale === 'en' }" class="cursor-pointer" @click="switchLang('en')">EN</li>
         </ul>
     </div>
 </template>

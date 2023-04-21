@@ -1,7 +1,10 @@
 import { defineConfig } from 'vite';
+import { fileURLToPath, URL } from 'node:url'
+import { resolve, dirname } from 'node:path'
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 import tailwindcss from 'tailwindcss';
+import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 
 export default defineConfig({
     plugins: [
@@ -13,6 +16,10 @@ export default defineConfig({
             refresh: true,
         }),
         vue(),
+        VueI18nPlugin({
+            runtimeOnly: false,
+            include: resolve(dirname(fileURLToPath(import.meta.url)), '/resources/js/includes/**'),
+        })
     ],
     css: {
         postcss: {

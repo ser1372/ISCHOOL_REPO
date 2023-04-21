@@ -8,6 +8,11 @@
     box-sizing: border-box;
 }
 
+html{
+    height: 100%;
+}
+
 body {
-    font-family: 'San Francisco Pro Text', sans-serif;
+    font-family: 'SF Pro Display', sans-serif;
+    background: #F4EFFF;
 }

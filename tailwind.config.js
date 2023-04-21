@@ -1,3 +1,4 @@
+
 module.exports = {
   content: [
     './resources/views/**/*',
@@ -5,7 +6,7 @@ module.exports = {
   ],
     theme: {
         fontFamily: {
-            sans: ['"San Francisco Pro Text"', 'sans-serif'],
+            sans: ["'SF Pro Display', 'sans-serif'"],
         },
     },
   plugins: [require('@tailwindcss/forms')],
