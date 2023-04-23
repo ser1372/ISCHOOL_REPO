@@ -5,8 +5,8 @@ const { locale } = useI18n();
 
 const switchLang = (lang) =>{
     locale.value = lang;
+    return locale.value;
 }
-
 </script>
 
 <template>

@@ -23,22 +23,22 @@ const toggleNav = () => {
                          md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0
                         " >
                     <li>
-                        <a class="font-medium text-lg lg:text-base px-4 py-2" href="#">{{$t('menu.advantages')}}</a>
+                        <a class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2" href="#">{{$t('menu.advantages')}}</a>
                     </li>
                     <li>
-                        <a class="font-medium text-lg lg:text-base px-4 py-2" href="#">{{$t('menu.club')}}</a>
+                        <a class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2" href="#">{{$t('menu.club')}}</a>
                     </li>
                     <li>
-                        <a class="font-medium text-lg lg:text-base px-4 py-2" href="#">{{$t('menu.price')}}</a>
+                        <a class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2" href="#">{{$t('menu.price')}}</a>
                     </li>
                     <li>
-                        <a class="font-medium text-lg lg:text-base px-4 py-2" href="#">{{$t('menu.feedback')}}</a>
+                        <a class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2" href="#">{{$t('menu.feedback')}}</a>
                     </li>
                     <li>
-                        <a class="font-medium text-lg lg:text-base px-4 py-2" href="#">{{$t('menu.cooperation')}}</a>
+                        <a class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2" href="#">{{$t('menu.cooperation')}}</a>
                     </li>
                     <li>
-                        <a class="font-medium text-lg lg:text-base px-4 py-2" href="#">{{$t('menu.contacts')}}</a>
+                        <a class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2" href="#">{{$t('menu.contacts')}}</a>
                     </li>
                 </ul>
             </nav>

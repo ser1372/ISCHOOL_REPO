@@ -6,5 +6,11 @@
         "feedback": "Reviews",
         "cooperation": "Cooperation",
         "contacts": "Contacts"
+    },
+    "banner": {
+        "h1title": "English with ease and\npleasure at",
+        "ptitle": "iSchool encourages learning with its friendly atmosphere and\nquality knowledge, where classes are conducted in an interesting\nand productive manner, with a touch of humor",
+        "freelesson": "Trial lesson",
+        "chatmessage": "Gain excellent knowledge in a friendly atmosphere"
     }
 }

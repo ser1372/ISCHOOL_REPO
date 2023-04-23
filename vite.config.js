@@ -30,7 +30,7 @@ export default defineConfig({
     },
     build: {
         rollupOptions: {
-            external: [/^\/?storage\/.*\.(png|jpe?g|gif)$/i],
+            external: [/^\/?storage\/.*\.(png|jpe?g|gif|webp)$/i],
         },
     },
 });

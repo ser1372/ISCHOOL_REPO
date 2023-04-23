@@ -16,3 +16,21 @@ body {
     font-family: 'SF Pro Display', sans-serif;
     background: #F4EFFF;
 }
+
+.trag{
+    content: "";
+    position: absolute;
+    left: 5px;
+    bottom: 10px;
+    width: 0;
+    height: 0;
+    top: 50px;
+    border-bottom: 1px solid #814AF1;
+    border-right: 1px solid #814AF1;
+    transform: rotate(73deg);
+    background: #F4EFFF;
+    padding-top: 23px;
+    padding-left: 24px;
+}
+
+

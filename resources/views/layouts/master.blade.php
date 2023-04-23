@@ -7,9 +7,9 @@
     </head>
     <body>
     <div id="app">
-        <header-component></header-component>
-        <div class="max-w-7xl mx-auto pt-36 md:pt-40 px-3 h-full">
-        </div>
+        <master-layout>
+            <freelesson-component></freelesson-component>
+        </master-layout>
     </div>
         @vite('resources/js/app.js')
     </body>
