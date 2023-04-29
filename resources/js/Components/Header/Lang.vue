@@ -1,12 +1,31 @@
 <script setup>
 import { useI18n } from 'vue-i18n';
+import { onMounted } from 'vue';
 
 const { locale } = useI18n();
 
-const switchLang = (lang) =>{
-    locale.value = lang;
-    return locale.value;
-}
+const switchLang = (lang) => {
+    const pathSegments = window.location.pathname.split('/');
+    pathSegments[1] = lang;
+    const newPath = pathSegments.join('/');
+
+    localStorage.setItem('selectedLanguage', lang);
+    window.location.href = newPath;
+};
+
+onMounted(() => {
+    const urlLanguage = window.location.pathname.split('/')[1];
+    const availableLanguages = ['en', 'ua']; // Замените на список доступных языков
+
+    if (availableLanguages.includes(urlLanguage)) {
+        locale.value = urlLanguage;
+    } else {
+        const storedLanguage = localStorage.getItem('selectedLanguage');
+        if (storedLanguage && availableLanguages.includes(storedLanguage)) {
+            locale.value = storedLanguage;
+        }
+    }
+});
 </script>
 
 <template>
