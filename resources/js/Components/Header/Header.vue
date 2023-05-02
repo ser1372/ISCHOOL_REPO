@@ -11,7 +11,7 @@ const toggleNav = () => {
 
 </script>
 <template>
-    <header class="max-w-screen-2xl mx-auto px-8 mt-8">
+    <header class="max-w-screen-2xl mx-auto px-4 mt-8">
         <div class="flex justify-between items-center">
             <Logo/>
             <nav>
@@ -21,7 +21,7 @@ const toggleNav = () => {
                             pt-8
                             lg:pt-0
                             space-y-4
-                            md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0
+                            lg:flex lg:space-y-0 lg:flex-row lg:items-center lg:space-x-10 lg:mt-0
                           ">
                     <li>
                         <a class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2"
@@ -50,7 +50,7 @@ const toggleNav = () => {
                 </ul>
             </nav>
             <Lang/>
-            <div @click="toggleNav" class="flex md:hidden">
+            <div @click="toggleNav" class="flex lg:hidden">
                 <BurgerButton/>
             </div>
         </div>

@@ -1,12 +1,13 @@
 <script setup>
 import Button from '@/Components/Button.vue';
-import Banner from './banner.vue';
+import Textbanner from "./textbanner.vue";
+import Imagebanner from './imagebanner.vue';
 import Arrowbanner from './arrowbanner.vue';
 </script>
 
 <template>
     <div class="flex justify-center">
-        <div class="flex flex-wrap md:flex-nowrap justify-between items-center max-[425px]:justify-end">
+        <div class="block flex-wrap md:flex-nowrap md:flex justify-between items-center max-[425px]:justify-end">
             <div class="flex flex-col gap-10 relative">
                 <h1 class="text-6xl font-medium max-w-[650px]">
                     {{ $t('banner.h1title') }}
@@ -17,7 +18,8 @@ import Arrowbanner from './arrowbanner.vue';
                 <Arrowbanner/>
             </div>
             <div>
-                <Banner/>
+                <Textbanner/>
+                <Imagebanner/>
             </div>
         </div>
     </div>
