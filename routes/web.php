@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,5 +18,8 @@ Route::prefix('{locale?}')->group(function () {
         return view('layouts.master');
     });
 
-    Route::get('/',[HomeController::class,'index']);
+    Route::get('/', [HomeController::class, 'index']);
+    Route::get('/login',function(){
+        return view('layouts.admin');
+    });
 });

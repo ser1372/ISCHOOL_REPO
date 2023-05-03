@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ischool</title>
 </head>
-    <body>
+<body>
     <div id="app">
         <loader-component>
             <master-layout>
                 <freelesson-component></freelesson-component>
                 <advantages-component :advantages="{{ json_encode($advantages) }}"></advantages-component>
+                <video-component></video-component>
             </master-layout>
         </loader-component>
     </div>
-    @vite('resources/js/app.js')
-    </body>
+@vite('resources/js/app.js')
+@include('components.google')
+</body>
 </html>

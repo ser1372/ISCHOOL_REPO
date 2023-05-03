@@ -6,6 +6,7 @@ import '../css/font.css';
 import MasterLayout from '@/Layouts/MasterLayout.vue';
 import freelesson from '@/Pages/Public/freelesson/freelesson.vue';
 import advantages from '@/Pages/Public/advantages/advantages.vue';
+import video from '@/Pages/Public/video/video.vue';
 import Loader from '@/Components/Loader/Loader.vue';
 
 
@@ -17,6 +18,7 @@ app.component('master-layout', MasterLayout);
 app.component('freelesson-component', freelesson);
 app.component('advantages-component', advantages);
 app.component('loader-component', Loader);
+app.component('video-component',video);
 
 app.use(i18n);
 app.mount('#app');

@@ -29,6 +29,10 @@ return [
 
     'max_age' => 0,
 
-    'supports_credentials' => false,
+    'supports_credentials' => true,
+
+    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+
+    'allowed_origins' => ['ischool.local'],
 
 ];

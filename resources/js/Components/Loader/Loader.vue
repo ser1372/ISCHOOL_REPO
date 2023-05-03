@@ -13,7 +13,7 @@ onMounted(async () => {
         isLoading.value = false;
         isLoaded.value = true;
     }
-});
+})
 
 const MasterLayout = ref(null);
 </script>

@@ -1,14 +1,12 @@
 <!-- AdvantagesComponent.vue -->
 <script setup>
 import {defineProps} from 'vue';
-
-const lang = localStorage.getItem('selectedLanguage');
+import ItemAdvantages from './ItemAdvantages.vue';
 
 //Пропсы передаються в основном шаблоне blade master.blade.php
 const props = defineProps({
     advantages: {
-        type: Array,
-        default: () => [],
+        type: Object,
     },
 });
 
@@ -25,15 +23,11 @@ const state = props.advantages
         </div>
     </div>
     <div class="container mx-auto px-4 py-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 items-center justify-center"
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-center justify-center md:gap-9"
              v-if="state.length">
             <!-- Repeat this block for each item -->
-            <div v-for="item in state" :key="item.id" class="rounded-md mt-[2.5rem] overflow-hidden">
-                <img class="object-cover" :src="/storage/ + item.img + '.png'" :alt="item.img">
-                <div class="pt-[2rem]">
-                    <h2 v-if="lang == 'ua'" class="text-2xl font-semibold">{{ item.advantages_ua }}</h2>
-                    <h2 v-else class="text-2xl font-semibold">{{ item.advantages_en }}</h2>
-                </div>
+            <div v-for="item in state" :key="item.id" class="mt-[2.5rem]">
+                <ItemAdvantages :item="item"/>
             </div>
             <!-- End of the block -->
         </div>
