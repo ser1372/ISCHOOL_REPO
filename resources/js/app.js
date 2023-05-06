@@ -7,6 +7,7 @@ import MasterLayout from '@/Layouts/MasterLayout.vue';
 import freelesson from '@/Pages/Public/freelesson/freelesson.vue';
 import advantages from '@/Pages/Public/advantages/advantages.vue';
 import video from '@/Pages/Public/video/video.vue';
+import club from '@/Pages/Public/speakingClub/club.vue';
 import Loader from '@/Components/Loader/Loader.vue';
 
 
@@ -19,6 +20,7 @@ app.component('freelesson-component', freelesson);
 app.component('advantages-component', advantages);
 app.component('loader-component', Loader);
 app.component('video-component',video);
+app.component('club-component',club);
 
 app.use(i18n);
 app.mount('#app');

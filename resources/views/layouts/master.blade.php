@@ -6,15 +6,16 @@
     <title>Ischool</title>
 </head>
 <body>
-    <div id="app">
-        <loader-component>
-            <master-layout>
-                <freelesson-component></freelesson-component>
-                <advantages-component :advantages="{{ json_encode($advantages) }}"></advantages-component>
-                <video-component></video-component>
-            </master-layout>
-        </loader-component>
-    </div>
+<div id="app">
+    <loader-component>
+        <master-layout>
+            <freelesson-component></freelesson-component>
+            <advantages-component :advantages="{{ json_encode($advantages) }}"></advantages-component>
+            <video-component></video-component>
+            <club-component></club-component>
+        </master-layout>
+    </loader-component>
+</div>
 @vite('resources/js/app.js')
 @include('components.google')
 </body>
