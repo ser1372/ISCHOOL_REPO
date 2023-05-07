@@ -1,6 +1,6 @@
 <script setup>
 import Button from '@/Components/Button.vue';
-import Textbanner from "./textbanner.vue";
+import Textbanner from "../Components/textbanner.vue";
 import Imagebanner from './imagebanner.vue';
 import Arrowbanner from './arrowbanner.vue';
 </script>
@@ -17,8 +17,8 @@ import Arrowbanner from './arrowbanner.vue';
                 <Button class="max-w-[433px]">{{ $t('banner.freelesson') }}</Button>
                 <Arrowbanner/>
             </div>
-            <div>
-                <Textbanner/>
+            <div class="flex flex-wrap justify-end">
+                <Textbanner reverse="right">{{ $t('banner.chatmessage') }}</Textbanner>
                 <Imagebanner/>
             </div>
         </div>
