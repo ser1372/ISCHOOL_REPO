@@ -39,10 +39,10 @@ const state = defineProps({
 .tangleright::after{
     content: '';
     position: absolute;
-    left: 208px;
-    top: 35.2px;
-    width: 16.56px;
-    height: 28.56px;
+    left: 213px;
+    top: 39.2px;
+    width: 10.56px;
+    height: 20.56px;
     background: #F4EFFF;
     border: 1px solid transparent;
     border-top-color: #814AF1;
