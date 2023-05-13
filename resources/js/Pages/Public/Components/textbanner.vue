@@ -40,7 +40,7 @@ const state = defineProps({
     content: '';
     position: absolute;
     left: 213px;
-    top: 39.2px;
+    top: 26.2px;
     width: 10.56px;
     height: 20.56px;
     background: #F4EFFF;

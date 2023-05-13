@@ -18,7 +18,7 @@ import Arrowbanner from './arrowbanner.vue';
                 <Arrowbanner/>
             </div>
             <div class="flex flex-wrap justify-end">
-                <Textbanner reverse="right">{{ $t('banner.chatmessage') }}</Textbanner>
+                <Textbanner reverse="left">{{ $t('banner.chatmessage') }}</Textbanner>
                 <Imagebanner/>
             </div>
         </div>

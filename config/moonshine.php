@@ -8,7 +8,7 @@ return [
     'namespace' => 'App\MoonShine',
 
     'title' => env('MOONSHINE_TITLE', 'Ischool'),
-    'logo' => env('MOONSHINE_LOGO', '/storage/logo.webp'),
+    'logo' => env('MOONSHINE_LOGO', '/storage/logo.png'),
 
     'route' => [
         'prefix' => env('MOONSHINE_ROUTE_PREFIX', 'admin'),
