@@ -1,8 +1,29 @@
 <script setup>
 import Button from '@/Components/Button.vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
 import Textbanner from "../Components/textbanner.vue";
 import Imagebanner from './imagebanner.vue';
 import Arrowbanner from './arrowbanner.vue';
+
+function getCurrentScreenWidth() {
+    const screen = reactive({ width: window.innerWidth });
+
+    const updateWidth = () => {
+        screen.width = window.innerWidth;
+    };
+
+    onMounted(() => {
+        window.addEventListener('resize', updateWidth);
+    });
+
+    onUnmounted(() => {
+        window.removeEventListener('resize', updateWidth);
+    });
+
+    return screen;
+}
+
+const currentScreen = getCurrentScreenWidth();
 </script>
 
 <template>
@@ -17,8 +38,9 @@ import Arrowbanner from './arrowbanner.vue';
                 <Button class="max-w-[433px]">{{ $t('banner.freelesson') }}</Button>
                 <Arrowbanner/>
             </div>
-            <div class="flex flex-wrap justify-end">
-                <Textbanner reverse="left">{{ $t('banner.chatmessage') }}</Textbanner>
+            <div class="flex flex-wrap justify-end max-[425px]:block">
+                <Textbanner v-if="currentScreen.width < 500" reverse="right" id="main">{{ $t('banner.chatmessage') }}</Textbanner>
+                <Textbanner v-else reverse="left">{{ $t('banner.chatmessage') }}</Textbanner>
                 <Imagebanner/>
             </div>
         </div>

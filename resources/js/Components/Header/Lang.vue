@@ -15,7 +15,7 @@ const switchLang = (lang) => {
 
 onMounted(() => {
     const urlLanguage = window.location.pathname.split('/')[1];
-    const availableLanguages = ['en', 'ua']; // Замените на список доступных языков
+    const availableLanguages = ['en', 'ua'];
 
     if (availableLanguages.includes(urlLanguage)) {
         locale.value = urlLanguage;
@@ -30,7 +30,7 @@ onMounted(() => {
 
 <template>
     <div>
-        <ul class="flex gap-4">
+        <ul class="flex gap-4 flex-wrap">
             <li :class="{ 'text-purple-500': locale === 'ua' }" class="cursor-pointer" @click="switchLang('ua')">UA</li>
             <li :class="{ 'text-purple-500': locale === 'en' }" class="cursor-pointer" @click="switchLang('en')">EN</li>
         </ul>

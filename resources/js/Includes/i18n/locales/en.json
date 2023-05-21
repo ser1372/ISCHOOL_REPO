@@ -18,6 +18,12 @@
         "ptitle": "The mission of iSchool is to provide quality English language education with the help of a strong team of professionals and modern teaching methodologies aimed at developing skills for successful work"
     },
     "speakingClub": {
-        "ptitle": "We know how important it is to communicate with the world on an equal footing, that's why we have created our own Speaking Club for our students."
+        "ptitle": "We know how important it is to communicate with the world on an equal footing, that's why we have created our own Speaking Club for our students.",
+        "banners": {
+            "index1": "Free self-expression",
+            "index2": "Friendly atmosphere",
+            "index3": "New topics for each meeting",
+            "index4": "Speaking improvement anywhere and whenever"
+        }
     }
 }

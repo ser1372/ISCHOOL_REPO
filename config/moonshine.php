@@ -35,7 +35,7 @@ return [
         'footer' => ''
     ],
     'locales' => [
-        'en', 'ru'
+        'ru', 'en'
     ],
     'middlewares' => [],
     'tinymce' => [
@@ -48,7 +48,7 @@ return [
     ],
     'header' => null, // blade path
     'footer' => [
-        'copyright' => 'Made with ❤️ by <a href="https://cutcode.dev" class="font-semibold text-purple hover:text-pink" target="_blank">CutCode</a>',
+        'copyright' => 'Made with ❤️ by <a href="https://ischool.local" class="font-semibold text-purple hover:text-pink" target="_blank">Ischool</a>',
         'nav' => [
             'https://github.com/lee-to/moonshine/blob/1.x/LICENSE.md' => 'License',
             'https://moonshine.cutcode.dev' => 'Documentation',

@@ -17,6 +17,30 @@ body {
     background: #F4EFFF;
 }
 
+
+/* Общий стиль для скроллбара */
+::-webkit-scrollbar {
+    width: 10px; /* Ширина вертикального скроллбара */
+    height: 10px; /* Высота горизонтального скроллбара */
+}
+
+/* Стиль для полосы прокрутки (бегунка) */
+::-webkit-scrollbar-thumb {
+    background: #906FD4; /* Цвет бегунка */
+    border-radius: 5px; /* Закругленность углов бегунка */
+}
+
+/* Стиль при наведении курсора на бегунок */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Цвет бегунка при наведении */
+}
+
+/* Стиль для трека скроллбара (полосы, по которой движется бегунок) */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Цвет трека */
+    border-radius: 5px; /* Закругленность углов трека */
+}
+
 /*LOADER START*/
 .loader span {
     display: inline-block;

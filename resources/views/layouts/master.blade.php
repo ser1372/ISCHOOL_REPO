@@ -13,6 +13,7 @@
             <advantages-component :advantages="{{ json_encode($advantages) }}"></advantages-component>
             <video-component></video-component>
             <club-component></club-component>
+            <price-component></price-component>
         </master-layout>
     </loader-component>
 </div>
