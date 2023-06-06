@@ -1,49 +1,63 @@
-<script setup></script>
+<script setup>
+import { reactive, defineExpose } from 'vue';
+import PriceCard from './price_card.vue';
+import Switcher from './switcher.vue';
+import { ItemsLevelEnglish,ItemsLevel,ItemsLessons,ItemsDescription } from './js/staticData.js';
+
+const props = defineProps({
+    prices: {
+        type: Array,
+        required: true,
+    }
+});
+
+let currency = reactive({ value: 'UAH' });
+const arrPriceUAH = props.prices.map(price => price.price_uah);
+const arrPriceGBP = props.prices.map(price => price.price_gbp);
+
+function chunkArray(array, chunkSize) {
+    let results = [];
+
+    while (array.length) {
+        results.push(array.splice(0, chunkSize));
+    }
+
+    return results;
+}
+
+const chunkedItemsLevel = chunkArray(ItemsLevel, 3);
+const chunkedItemsItemsLevelEnglish = chunkArray(ItemsLevelEnglish,1);
+const chunkedItemsLessons = chunkArray(ItemsLessons,1);
+const chunkedItemsDescription = chunkArray(ItemsDescription,3);
+
+const updateCurrency = (newCurrency) => {
+    currency.value = newCurrency;
+}
+
+defineExpose({
+    updateCurrency,
+    currency
+});
+</script>
+
 <template>
     <section class="w-full h-screen py-10">
-        <div class="text-center mb-10">
-            <h1 class="font-bold text-3xl mb-2">Pricing Table</h1>
-            <h4 class="text-gray-600">This is a simple TailwindCSS pricing table.</h4>
+        <div>
+            <h2 class="text-center font-semibold text-4xl mb-[50px]">Ціни</h2>
+            <div class="max-w-[28.125rem] mx-auto">
+                <p class="text-center  text-lg font-normal">Кожен студент матиме свій індивідуальний план навчання, і ціна курсу буде залежати від кількості занять на тиждень.</p>
+            </div>
         </div>
-        <div class="max-w-3xl mx-auto flex flex-col md:flex-row px-2 md:px-0">
-            <div class="w-full md:w-1/3 bg-white rounded-lg shadow hover:shadow-xl transition duration-100 ease-in-out p-6 md:mr-4 mb-10 md:mb-0">
-                <h3 class="text-gray-600 text-lg">Base</h3>
-                <p class="text-gray-600 mt-1"><span class="font-bold text-black text-4xl">$69</span> /Month</p>
-                <p class="text-sm text-gray-600 mt-2">For most businesses that want to optimize web queries.</p>
-                <div class="text-sm text-gray-600 mt-4">
-                    <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> All limited links</p>
-                    <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Own analytics platform</p>
-                    <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Chat support</p>
-                    <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Optimize hashtags</p>
-                    <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Unlimited users</p>
-                </div>
-                <button class="w-full text-purple-700 border border-purple-700 rounded hover:bg-purple-700 hover:text-white hover:shadow-xl transition duration-150 ease-in-out py-4 mt-4">Choose Plan</button>
-            </div>
-            <div class="w-full md:w-1/3 text-white bg-purple-700 rounded-lg shadow hover:shadow-xl transition duration-100 ease-in-out p-6 md:mr-4 mb-10 md:mb-0">
-                <h3 class="text-lg">Popular</h3>
-                <p class="mt-1"><span class="font-bold text-4xl">$99</span> /Month</p>
-                <p class="text-sm opacity-75 mt-2">For most businesses that want to optimize web queries.</p>
-                <div class="text-sm mt-4">
-                    <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> All limited links</p>
-                    <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Own analytics platform</p>
-                    <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Chat support</p>
-                    <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Optimize hashtags</p>
-                    <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Unlimited users</p>
-                </div>
-                <button class="w-full text-purple-700 bg-white rounded opacity-75 hover:opacity-100 hover:shadow-xl transition duration-150 ease-in-out py-4 mt-4">Choose Plan</button>
-            </div>
-            <div class="w-full md:w-1/3 bg-white rounded-lg shadow hover:shadow-xl transition duration-100 ease-in-out p-6 mb-10 md:mb-0">
-                <h3 class="text-gray-600 text-lg">Enterprise</h3>
-                <p class="text-gray-600 mt-1"><span class="font-bold text-black text-4xl">$299</span> /Month</p>
-                <p class="text-sm text-gray-600 mt-2">For most businesses that want to optimize web queries.</p>
-                <div class="text-sm text-gray-600 mt-4">
-                    <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> All limited links</p>
-                    <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Own analytics platform</p>
-                    <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Chat support</p>
-                    <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Optimize hashtags</p>
-                    <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Unlimited users</p>
-                </div>
-                <button class="w-full text-purple-700 border border-purple-700 rounded hover:bg-purple-700 hover:text-white hover:shadow-xl transition duration-150 ease-in-out py-4 mt-4">Choose Plan</button>
+        <Switcher @changeCurrency="updateCurrency" />
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row px-2 md:px-0" >
+            <div v-for="(item, index) in (currency.value === 'UAH' ? arrPriceUAH : arrPriceGBP)" :key="index"
+                 class="relative w-full md:w-1/3 bg-white rounded-3xl shadow hover:shadow-xl transition duration-100 ease-in-out p-[16px] xl:p-[40px] md:mr-4 mb-10 md:mb-0">
+                <PriceCard
+                    :itemsLevel="chunkedItemsLevel[index]"
+                    :itemsLessons="chunkedItemsLessons[index]"
+                    :itemsLevelEnglish="chunkedItemsItemsLevelEnglish[index]"
+                    :itemsDescription="chunkedItemsDescription[index]"
+                    :price="item"/>
             </div>
         </div>
     </section>

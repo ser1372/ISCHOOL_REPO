@@ -55,7 +55,7 @@ const arrClub = [
         <div class="mt-[3.313rem]">
             <Logo class="w-[10.375rem] h-[3.188rem]"/>
         </div>
-        <Textbanner reverse="left" id="index1mob">
+        <Textbanner reverse="left" id="index2mob">
             <p class="font-semibold">{{ $t("speakingClub.banners.index3") }}</p>
         </Textbanner>
         <img src="/storage/club/first.png" alt="" class="w-[8.875rem]">

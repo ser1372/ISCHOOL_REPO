@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ischool</title>
+    <link rel="icon" href="/storage/logoicon.jpg" type="image/x-icon">
 </head>
 <body>
 <div id="app">
@@ -13,7 +14,7 @@
             <advantages-component :advantages="{{ json_encode($advantages) }}"></advantages-component>
             <video-component></video-component>
             <club-component></club-component>
-            <price-component></price-component>
+            <price-component :prices="{{json_encode($prices)}}"></price-component>
         </master-layout>
     </loader-component>
 </div>

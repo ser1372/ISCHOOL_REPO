@@ -17,9 +17,5 @@ Route::prefix('{locale?}')->group(function () {
     Route::get('/', function () {
         return view('layouts.master');
     });
-
     Route::get('/', [HomeController::class, 'index']);
-    Route::get('/login',function(){
-        return view('layouts.admin');
-    });
 });

@@ -26,7 +26,7 @@ const state = props.advantages
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-center justify-center md:gap-9"
              v-if="state.length">
             <!-- Repeat this block for each item -->
-            <div v-for="item in state" :key="item.id" class="mt-[2.5rem]">
+            <div v-for="item in state" :key="item.advantages_en" class="mt-[2.5rem]">
                 <ItemAdvantages :item="item"/>
             </div>
             <!-- End of the block -->

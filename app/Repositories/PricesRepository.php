@@ -1,10 +1,9 @@
 <?php
 
 namespace  App\Repositories;
-use App\Models\Advantage as Model;
+use App\Models\Price as Model;
 
-class AdvantageRespository extends CoreRepository{
-
+class PricesRepository extends CoreRepository{
     public function __construct()
     {
         parent::__construct();
@@ -15,10 +14,7 @@ class AdvantageRespository extends CoreRepository{
         return Model::class;
     }
 
-
     public function getAll(){
-
-        return $this->model->get(['img','advantages_ua','advantages_en']);
+        return $this->model->get();
     }
-
 }

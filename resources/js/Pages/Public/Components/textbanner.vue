@@ -31,6 +31,10 @@ const state = defineProps({
     top: 30.2px;
 }
 
+#index2mob:after{
+    top: 45.2px;
+}
+
 #index2:after,#index3:after{
     top: 29.2px;
 }

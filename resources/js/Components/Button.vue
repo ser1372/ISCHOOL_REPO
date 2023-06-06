@@ -18,11 +18,23 @@ defineProps({
             text-[#FFFFFF]
             pt-[10px]
             pb-[10px]
-            active:bg-[#561CCF]
+            w-full
+            border-transparent
+            transition-all
+            duration-200
+            ease-in-out
+            border-[1px]
+            hover:text-[#814AF1]
+            hover:bg-[#FFFFFF]
+            hover:border-[1px]
+            hover:border-[#814AF1]
+            active:bg-gradient-to-br
+            active:from-purple-500
+            active:to-purple-900
+            active:text-[#FFFFFF]
         "
             :class="{
-            'outline-none border-gray-900 bg-gray-500' : active,
-            'bg-[#814AF1] hover:bg-gradient-to-br from-purple-500 to-purple-900' : !active
+            'bg-[#814AF1]' : !active
         }"
     >
         <slot/>
