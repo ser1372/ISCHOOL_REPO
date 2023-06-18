@@ -14,7 +14,9 @@
             <advantages-component :advantages="{{ json_encode($advantages) }}"></advantages-component>
             <video-component></video-component>
             <club-component></club-component>
-            <price-component :prices="{{json_encode($prices)}}"></price-component>
+            <price-component :prices="{{ json_encode($prices) }}"></price-component>
+            <reviews-component :reviews="{{ json_encode($reviews) }}"></reviews-component>
+            <learn-component :learn="{{ json_encode($learn) }}"></learn-component>
         </master-layout>
     </loader-component>
 </div>

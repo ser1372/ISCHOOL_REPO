@@ -1,29 +1,45 @@
 {
-    "menu": {
-        "advantages": "Our advantages",
-        "club": "Speaking club",
-        "price": "Prices",
-        "feedback": "Reviews",
-        "cooperation": "Cooperation",
-        "contacts": "Contacts"
-    },
-    "banner": {
-        "h1title": "English with ease and\npleasure at",
-        "ptitle": "iSchool encourages learning with its friendly atmosphere and\nquality knowledge, where classes are conducted in an interesting\nand productive manner, with a touch of humor",
-        "freelesson": "Trial lesson",
-        "chatmessage": "Gain excellent knowledge in a friendly atmosphere"
-    },
-    "advantages": {
-        "h2title": "Our advantages",
-        "ptitle": "The mission of iSchool is to provide quality English language education with the help of a strong team of professionals and modern teaching methodologies aimed at developing skills for successful work"
-    },
-    "speakingClub": {
-        "ptitle": "We know how important it is to communicate with the world on an equal footing, that's why we have created our own Speaking Club for our students.",
-        "banners": {
-            "index1": "Free self-expression",
-            "index2": "Friendly atmosphere",
-            "index3": "New topics for each meeting",
-            "index4": "Speaking improvement anywhere and whenever"
-        }
+  "menu": {
+    "advantages": "Our advantages",
+    "club": "Speaking club",
+    "price": "Prices",
+    "feedback": "Reviews",
+    "cooperation": "Cooperation",
+    "contacts": "Contacts"
+  },
+  "banner": {
+    "h1title": "English with ease and\npleasure at",
+    "ptitle": "iSchool encourages learning with its friendly atmosphere and\nquality knowledge, where classes are conducted in an interesting\nand productive manner, with a touch of humor",
+    "freelesson": "Trial lesson",
+    "chatmessage": "Gain excellent knowledge in a friendly atmosphere"
+  },
+  "advantages": {
+    "h2title": "Our advantages",
+    "ptitle": "The mission of iSchool is to provide quality English language education with the help of a strong team of professionals and modern teaching methodologies aimed at developing skills for successful work"
+  },
+  "speakingClub": {
+    "ptitle": "We know how important it is to communicate with the world on an equal footing, that's why we have created our own Speaking Club for our students.",
+    "banners": {
+      "index1": "Free self-expression",
+      "index2": "Friendly atmosphere",
+      "index3": "New topics for each meeting",
+      "index4": "Speaking improvement anywhere and whenever"
     }
+  },
+  "prices": {
+    "name_block": "Prices",
+    "sub_title": "Each student will have their own individual learning plan, and the course price will depend on the number of lessons per week",
+    "subscribe": "Book",
+    "min": "55min"
+  },
+  "under_items_price": {
+    "main_title": "Don't postpone learning English for later",
+    "desc_title_first": "If you pay for the full course (which lasts for 1 month), you will receive",
+    "desc_title_second": "4 free sessions at the Speaking Club",
+    "trial": "Trial lesson"
+  },
+  "reviews": {
+    "title_h2": "Reviews",
+    "title_p": "We understand that one video may not be enough, so we suggest reading more feedback from our students."
+  }
 }

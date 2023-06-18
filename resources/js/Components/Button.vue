@@ -18,7 +18,6 @@ defineProps({
             text-[#FFFFFF]
             pt-[10px]
             pb-[10px]
-            w-full
             border-transparent
             transition-all
             duration-200
