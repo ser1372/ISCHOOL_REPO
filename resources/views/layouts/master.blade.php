@@ -17,6 +17,8 @@
             <price-component :prices="{{ json_encode($prices) }}"></price-component>
             <reviews-component :reviews="{{ json_encode($reviews) }}"></reviews-component>
             <learn-component :learn="{{ json_encode($learn) }}"></learn-component>
+            <speak-free-component></speak-free-component>
+            <cooperation-component></cooperation-component>
         </master-layout>
     </loader-component>
 </div>

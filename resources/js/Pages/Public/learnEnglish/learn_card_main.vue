@@ -6,7 +6,11 @@ const props = defineProps({
 		type: Object,
 		default: [],
 	}
-})
+});
+
+const currentUrl = () => {
+	return window.location.href;
+}
 </script>
 
 <template>
@@ -17,7 +21,10 @@ const props = defineProps({
 				<img class="h-48 w-full object-contain md:w-48" :src="'/storage/learn/' + props.item.img + '.png'"
 						 :alt="props.item.description">
 			</div>
-			<p class="ml-[48px] text-[37px] leading-tight font-semibold text-black" v-html="props.item.description"></p>
+			<p class="ml-[48px] text-[37px] leading-tight font-semibold text-black" v-html="props.item.description_en"
+				 v-if="currentUrl().includes('/en')"></p>
+			<p class="ml-[48px] text-[37px] leading-tight font-semibold text-black" v-html="props.item.description"
+				 v-else></p>
 		</div>
 	</div>
 </template>

@@ -1,5 +1,5 @@
 <script setup>
-import {defineProps} from 'vue'
+import {defineProps} from 'vue';
 
 const props = defineProps({
 	item: {
@@ -11,6 +11,10 @@ const props = defineProps({
 		default: 0,
 	}
 });
+
+const currentUrl = () => {
+	return window.location.href;
+}
 </script>
 
 <template>
@@ -18,7 +22,7 @@ const props = defineProps({
 		<div
 				class=" p-[32px] mx-auto bg-white rounded-xl shadow-md overflow-hidden">
 			<div
-					class="w-[41px] absolute right-[-14px] top-[-12px] grid place-content-center h-[41px] bg-white rounded-[50%] border border-[#814AF1] text-2xl text-[#814AF1] font-semibold">
+					class="w-[41px] absolute right-[-13px] top-[-12px] grid place-content-center h-[41px] bg-white rounded-[50%] border border-[#814AF1] text-2xl text-[#814AF1] font-semibold">
 				{{ props.index }}
 			</div>
 			<div class="flex justify-center items-center gap-[16px]">
@@ -27,7 +31,13 @@ const props = defineProps({
 							 :alt="props.item.description">
 				</div>
 				<div class="flex items-center">
-					<p class="block  font-semibold text-2xl leading-tight text-black">{{ props.item.description }}</p>
+					<p class="block  font-semibold text-2xl lg:text-xl leading-tight text-black"
+						 v-if="currentUrl().includes('/en')">{{
+							props.item.description_en
+						}}</p>
+					<p class="block font-semibold text-2xl lg:text-xl leading-tight text-black" v-else>{{
+							props.item.description
+						}}</p>
 				</div>
 			</div>
 		</div>

@@ -14,6 +14,8 @@ import prices from '@/Pages/Public/price/prices.vue';
 import Loader from '@/Components/Loader/Loader.vue';
 import Reviews from '@/Pages/Public/reviews/reviews.vue';
 import LearnEnglish from "@/Pages/Public/learnEnglish/learnEnglish.vue";
+import SpeakFree from '@/Pages/Public/SpeakFree/SpeakFree.vue';
+import Cooperation from "@/Pages/Public/Cooperation/cooperation.vue";
 /* END ИМПОРТЫ */
 
 
@@ -32,6 +34,8 @@ app.component('club-component', club);
 app.component('price-component', prices);
 app.component('reviews-component', Reviews);
 app.component('learn-component', LearnEnglish);
+app.component('speak-free-component', SpeakFree);
+app.component('cooperation-component', Cooperation);
 /* END ИНИЦИАЛИЗАЦИЯ КОМПОНЕНТОВ */
 
 /* ПРИВЯЗКИ ИСПОЛЬЗЫВАНИЕ УТИЛИТ */

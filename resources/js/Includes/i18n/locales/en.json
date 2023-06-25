@@ -41,5 +41,28 @@
   "reviews": {
     "title_h2": "Reviews",
     "title_p": "We understand that one video may not be enough, so we suggest reading more feedback from our students."
+  },
+  "speakFree": {
+    "title_banner_1": "It's time to take it to the next level",
+    "title_banner_2": "Speak with foreigners without fear",
+    "p_title": "Don't put off English and new opportunities for later, sign up for a trial lesson right now."
+  },
+  "cooperation": {
+    "titleH2": "Cooperation",
+    "titleP": "Our company is constantly growing and expanding its market, so we are interested in new partners and considering projects that can be commercially viable.",
+    "tutor": "Become a tutor"
+  },
+  "footer": {
+    "title": "You can always express your suggestions and wishes regarding our school via our email. We are happy to listen to your feedback and will do our best to improve the operation of our school."
+  },
+  "modal": {
+    "education": "We invite you to study with us",
+    "write": "Fill out this short form and we will contact you shortly. It will take no more than 5 minutes.",
+    "form_data": {
+      "name": "Name and surname",
+      "tel": "Phone number or nickname in Telegram via @",
+      "how": "How did you hear about us?"
+    },
+    "submit": "Send"
   }
 }
