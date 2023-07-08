@@ -20,7 +20,10 @@ class AdvantageResource extends Resource
     {
         return [
             ID::make()->sortable(),
-            File::make('Фотка', 'img'),
+            File::make('Фотка', 'img')
+                ->allowedExtensions(['jpg', 'gif', 'png'])
+                ->removable()
+            ,
             Text::make('Текст(англ)', 'advantages_en'),
             Text::make('Текст(укр)', 'advantages_ua'),
             Text::make('Дата', 'created_at'),
