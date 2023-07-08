@@ -1,0 +1,73 @@
+{
+  "menu": {
+    "advantages": "Our advantages",
+    "club": "Speaking club",
+    "price": "Prices",
+    "feedback": "Reviews",
+    "cooperation": "Cooperation",
+    "contacts": "Contacts"
+  },
+  "banner": {
+    "h1title": "English with ease and\npleasure at",
+    "ptitle": "iSchool encourages learning with its friendly atmosphere and\nquality knowledge, where classes are conducted in an interesting\nand productive manner, with a touch of humor",
+    "freelesson": "Trial lesson",
+    "chatmessage": "Gain excellent knowledge in a friendly atmosphere"
+  },
+  "advantages": {
+    "h2title": "Our advantages",
+    "ptitle": "The mission of iSchool is to provide quality English language education with the help of a strong team of professionals and modern teaching methodologies aimed at developing skills for successful work"
+  },
+  "speakingClub": {
+    "ptitle": "We know how important it is to communicate with the world on an equal footing, that's why we have created our own Speaking Club for our students.",
+    "banners": {
+      "index1": "Free self-expression",
+      "index2": "Friendly atmosphere",
+      "index3": "New topics for each meeting",
+      "index4": "Speaking improvement anywhere and whenever"
+    }
+  },
+  "prices": {
+    "name_block": "Prices",
+    "sub_title": "Each student will have their own individual learning plan, and the course price will depend on the number of lessons per week",
+    "subscribe": "Book",
+    "min": "55min",
+    "lvl": "Levels"
+  },
+  "under_items_price": {
+    "main_title": "Don't postpone learning English for later",
+    "desc_title_first": "If you pay for the full course (which lasts for 1 month), you will receive",
+    "desc_title_second": "4 free sessions at the Speaking Club",
+    "trial": "Trial lesson"
+  },
+  "reviews": {
+    "title_h2": "Reviews",
+    "title_p": "We understand that one video may not be enough, so we suggest reading more feedback from our students."
+  },
+  "speakFree": {
+    "title_banner_1": "It's time to take it to the next level",
+    "title_banner_2": "Speak with foreigners without fear",
+    "p_title": "Don't put off English and new opportunities for later, sign up for a trial lesson right now."
+  },
+  "cooperation": {
+    "titleH2": "Cooperation",
+    "titleP": "Our company is constantly growing and expanding its market, so we are interested in new partners and considering projects that can be commercially viable.",
+    "tutor": "Become a tutor"
+  },
+  "footer": {
+    "title": "You can always express your suggestions and wishes regarding our school via our email. We are happy to listen to your feedback and will do our best to improve the operation of our school."
+  },
+  "modal": {
+    "education": "We invite you to study with us",
+    "write": "Fill out this short form and we will contact you shortly. It will take no more than 5 minutes.",
+    "form_data": {
+      "name": "Name and surname",
+      "tel": "Phone number or nickname in Telegram via @",
+      "how": "How did you hear about us?"
+    },
+    "submit": "Send"
+  },
+  "swal": {
+    "title_success": "Your form has been successfully submitted.",
+    "title_error": "There was an error, please try again or contact the administration."
+  }
+}

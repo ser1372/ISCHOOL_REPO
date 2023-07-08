@@ -2,12 +2,208 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-    margin:0px;
+* {
+    margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'San Francisco Pro Text', sans-serif;
+html {
+    height: 100%;
+    scroll-behavior: smooth;
 }
+
+body {
+    font-family: 'SF Pro Display', sans-serif;
+    background: #F4EFFF;
+}
+
+
+/* Общий стиль для скроллбара */
+::-webkit-scrollbar {
+    width: 10px; /* Ширина вертикального скроллбара */
+    height: 10px; /* Высота горизонтального скроллбара */
+}
+
+/* Стиль для полосы прокрутки (бегунка) */
+::-webkit-scrollbar-thumb {
+    background: #906FD4; /* Цвет бегунка */
+    border-radius: 5px; /* Закругленность углов бегунка */
+}
+
+/* Стиль при наведении курсора на бегунок */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Цвет бегунка при наведении */
+}
+
+/* Стиль для трека скроллбара (полосы, по которой движется бегунок) */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Цвет трека */
+    border-radius: 5px; /* Закругленность углов трека */
+}
+
+/*LOADER START*/
+.loader span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #814AF1;
+    margin: 0 10px;
+}
+
+.loader span:nth-child(1) {
+    animation: 1s jump infinite ease-in-out;
+}
+
+.loader span:nth-child(2) {
+    animation: 1s 0.333s jump infinite ease-in-out;
+}
+
+.loader span:nth-child(3) {
+    animation: 1s 0.667s jump infinite ease-in-out;
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    30% {
+        transform: translateY(-20px) scale(1.2);
+    }
+    75% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+/*LOADER END*/
+
+/*CAROUSEL CARD START*/
+.card {
+    transform-origin: 50% 33px;
+}
+
+.cards_wrapper {
+    background-image: url("/storage/logo.png");
+    background-position: center calc(55% + 25px);
+    background-size: 165px, 51px;
+    background-repeat: no-repeat;
+}
+
+
+.cards_wrapper::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(50%, -66px);
+    padding: 6px 12px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.angle_wrapper {
+    position: absolute;
+    left: calc(50% - 90.5px); /* половина ширины карты (181px) */
+    height: 50%;
+    transform-origin: 50% 100%;
+}
+
+.angle_wrapper:nth-child(1) {
+    transform: rotate(0deg);
+}
+
+.angle_wrapper:nth-child(2) {
+    transform: rotate(72deg);
+}
+
+.angle_wrapper:nth-child(3) {
+    transform: rotate(144deg);
+}
+
+.angle_wrapper:nth-child(4) {
+    transform: rotate(216deg);
+}
+
+.angle_wrapper:nth-child(5) {
+    transform: rotate(288deg);
+}
+
+.angle_wrapper:nth-child(1) .card {
+    transform: rotate(0deg);
+}
+
+.angle_wrapper:nth-child(2) .card {
+    transform: rotate(-72deg);
+}
+
+.angle_wrapper:nth-child(3) .card {
+    transform: rotate(-144deg);
+}
+
+.angle_wrapper:nth-child(4) .card {
+    transform: rotate(-216deg);
+}
+
+.angle_wrapper:nth-child(5) .card {
+    transform: rotate(-288deg);
+}
+
+.circle {
+    height: 500px; /* Измените размеры по вашему желанию */
+    width: 400px;
+    position: relative;
+    animation: rotate 70s linear infinite;
+    top: 53px;
+    transform-style: flat; /* Используем плоское пространство трансформации */
+}
+
+.card {
+    position: absolute;
+    top: calc(50% - 90px); /* Половина высоты карты (181px) */
+    left: calc(50% - 90px); /* Половина ширины карты (181px) */
+    transform-origin: center center;
+    transform: rotate(var(--angle)) translateY(-211px) rotate(calc(-1 * var(--angle)));
+}
+
+.dynamic-rotate {
+    animation: dynamicRotate 70s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes dynamicRotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+/*CAROUSEL CARD END*/
+
+
+.modal {
+    background-image: url('/storage/modal1.png'), url('/storage/modal2.png'), url('/storage/modal3.png');
+    background-repeat: no-repeat;
+    background-position: 23% 120%, -3% 123%, 11% 57%;
+}
+
+@media (max-width: 1023px) {
+    .modal {
+        background-image: none;
+    }
+}
+
+
+
+
