@@ -15,7 +15,7 @@ const toggleNav = () => {
 		<div class="flex justify-between items-center">
 			<Logo/>
 			<nav>
-				<ul :class="showMenu ? 'flex absolute  w-full h-screen bg-white top-0 left-0 z-10' : 'hidden'"
+				<ul :class="showMenu ? 'flex absolute  w-full h-[80vh] bg-white top-0 left-0 z-10' : 'hidden'"
 						class="
                             flex-col
                             pt-8
@@ -25,27 +25,27 @@ const toggleNav = () => {
                           ">
 					<li>
 						<a class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2"
-							 href="#">{{ $t('menu.advantages') }}</a>
+							 href="#advantages">{{ $t('menu.advantages') }}</a>
 					</li>
 					<li>
 						<a class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2"
-							 href="#">{{ $t('menu.club') }}</a>
+							 href="#speakingclub">{{ $t('menu.club') }}</a>
 					</li>
 					<li>
 						<a class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2"
-							 href="#">{{ $t('menu.price') }}</a>
+							 href="#price">{{ $t('menu.price') }}</a>
 					</li>
 					<li>
 						<a class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2"
-							 href="#">{{ $t('menu.feedback') }}</a>
+							 href="#reviews">{{ $t('menu.feedback') }}</a>
 					</li>
 					<li>
 						<a class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2"
-							 href="#">{{ $t('menu.cooperation') }}</a>
+							 href="#cooperation">{{ $t('menu.cooperation') }}</a>
 					</li>
 					<li>
 						<a class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2"
-							 href="#">{{ $t('menu.contacts') }}</a>
+							 href="#contacts">{{ $t('menu.contacts') }}</a>
 					</li>
 				</ul>
 			</nav>

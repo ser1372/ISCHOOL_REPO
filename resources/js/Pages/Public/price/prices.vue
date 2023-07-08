@@ -42,7 +42,7 @@ defineExpose({
 </script>
 
 <template>
-	<section class="w-full h-[100%] py-10">
+	<section class="w-full h-[100%] py-10" id="price">
 		<div>
 			<h2 class="text-center font-semibold text-4xl mb-[50px]">{{ $t("prices.name_block") }}</h2>
 			<div class="max-w-[28.125rem] mx-auto">

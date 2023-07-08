@@ -9,10 +9,14 @@
 <body>
 <div id="app">
     <loader-component>
-        <master-layout>
+        <master-layout
+                :telegram="{{json_encode($telegram)}}"
+                :email="{{json_encode($email)}}"
+                :telephone="{{json_encode($telephone)}}"
+        >
             <freelesson-component></freelesson-component>
             <advantages-component :advantages="{{ json_encode($advantages) }}"></advantages-component>
-            <video-component></video-component>
+            <video-component :video="{{ json_encode($video) }}"></video-component>
             <club-component></club-component>
             <price-component :prices="{{ json_encode($prices) }}"></price-component>
             <reviews-component :reviews="{{ json_encode($reviews) }}"></reviews-component>

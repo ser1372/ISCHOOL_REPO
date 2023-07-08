@@ -2,52 +2,53 @@
 
 namespace App\Models\Enums;
 
-class AdvantageEnum{
+class AdvantageEnum
+{
     const state = [
         [
-            'img' => 'timeline',
-            'advantages_ua' =>'Гнучкий графік' ,
-            'advantages_en' =>'Flexible schedule' ,
+            'img' => 'timeline.png',
+            'advantages_ua' => 'Гнучкий графік',
+            'advantages_en' => 'Flexible schedule',
         ],
         [
-            'img' => 'time',
-            'advantages_ua' =>'Економія часу та мобільність' ,
-            'advantages_en' =>'Mobility' ,
+            'img' => 'time.png',
+            'advantages_ua' => 'Економія часу та мобільність',
+            'advantages_en' => 'Mobility',
         ],
         [
-            'img' => 'material',
-            'advantages_ua' =>'Електронні матеріали' ,
-            'advantages_en' =>'Electronic materials' ,
+            'img' => 'material.png',
+            'advantages_ua' => 'Електронні матеріали',
+            'advantages_en' => 'Electronic materials',
         ],
         [
-            'img' => 'education',
-            'advantages_ua' =>'Інтерактивне навчання' ,
-            'advantages_en' =>'interactive learning' ,
+            'img' => 'education.png',
+            'advantages_ua' => 'Інтерактивне навчання',
+            'advantages_en' => 'interactive learning',
         ],
         [
-            'img' => 'result',
-            'advantages_ua' =>'Результат з першого заняття' ,
-            'advantages_en' =>'Results from the first lesson' ,
+            'img' => 'result.png',
+            'advantages_ua' => 'Результат з першого заняття',
+            'advantages_en' => 'Results from the first lesson',
         ],
         [
-            'img' => 'complex',
-            'advantages_ua' =>'Комплексний підхід' ,
-            'advantages_en' =>'Comprehensive approach' ,
+            'img' => 'complex.png',
+            'advantages_ua' => 'Комплексний підхід',
+            'advantages_en' => 'Comprehensive approach',
         ],
         [
-            'img' => 'supported',
-            'advantages_ua' =>'Підтримка під час навчання' ,
-            'advantages_en' =>'Support during studies' ,
+            'img' => 'supported.png',
+            'advantages_ua' => 'Підтримка під час навчання',
+            'advantages_en' => 'Support during studies',
         ],
         [
-            'img' => 'progress',
-            'advantages_ua' =>'Слідкування за прогресом' ,
-            'advantages_en' =>'Progress tracking' ,
+            'img' => 'progress.png',
+            'advantages_ua' => 'Слідкування за прогресом',
+            'advantages_en' => 'Progress tracking',
         ],
         [
-            'img' => 'price',
-            'advantages_ua' =>'Доступні ціни' ,
-            'advantages_en' =>'Affordable prices' ,
+            'img' => 'price.png',
+            'advantages_ua' => 'Доступні ціни',
+            'advantages_en' => 'Affordable prices',
         ],
     ];
 }

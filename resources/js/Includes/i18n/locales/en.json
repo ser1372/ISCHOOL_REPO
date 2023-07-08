@@ -30,7 +30,8 @@
     "name_block": "Prices",
     "sub_title": "Each student will have their own individual learning plan, and the course price will depend on the number of lessons per week",
     "subscribe": "Book",
-    "min": "55min"
+    "min": "55min",
+    "lvl": "Levels"
   },
   "under_items_price": {
     "main_title": "Don't postpone learning English for later",
@@ -64,5 +65,9 @@
       "how": "How did you hear about us?"
     },
     "submit": "Send"
+  },
+  "swal": {
+    "title_success": "Your form has been successfully submitted.",
+    "title_error": "There was an error, please try again or contact the administration."
   }
 }

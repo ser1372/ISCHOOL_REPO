@@ -12,7 +12,7 @@ const props = defineProps({
 </script>
 
 <template>
-	<section class="mt-[130px] h-full mb-[120px]">
+	<section class="mt-[130px] h-full mb-[120px]" id="reviews">
 		<DescriptionMain :titleH2="$t('reviews.title_h2')"
 										 :titleP="$t('reviews.title_p')">
 			<div class="flex lg:justify-between lg:flex-nowrap mt-[50px] flex-wrap gap-[20px] justify-center ">

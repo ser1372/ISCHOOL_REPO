@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PricesSeed::class);
         $this->call(ReviewsSeed::class);
         $this->call(LearnSeed::class);
+        $this->call(OptionsSeed::class);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

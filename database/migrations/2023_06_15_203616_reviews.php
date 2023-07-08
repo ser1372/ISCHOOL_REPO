@@ -11,7 +11,9 @@ return new class extends Migration {
             $table->id();
             $table->string('img');
             $table->string('name');
+            $table->string("name_en");
             $table->text('description');
+            $table->text("description_en");
             $table->timestamp('date')->useCurrent();
         });
     }
