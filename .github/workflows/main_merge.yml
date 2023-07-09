@@ -1,0 +1,22 @@
+name: Merge to main
+
+on:
+  push:
+    branches:
+      - main-second  # Replace with your development branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout dev code
+        uses: actions/checkout@v2
+        with:
+          ref: main-second # Replace with your development branch
+
+      - name: Push to main
+        run: |
+          git checkout main || git checkout -b main
+          git merge --no-ff --allow-unrelated-histories dev  # Replace with your development branch
+          git push origin main
