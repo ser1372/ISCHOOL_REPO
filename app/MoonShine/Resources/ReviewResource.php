@@ -5,8 +5,10 @@ namespace App\MoonShine\Resources;
 use App\Models\Review;
 use Illuminate\Database\Eloquent\Model;
 use MoonShine\Actions\FiltersAction;
+use MoonShine\Fields\File;
 use MoonShine\Fields\ID;
 use MoonShine\Fields\Text;
+use MoonShine\Fields\Textarea;
 use MoonShine\Resources\Resource;
 
 class ReviewResource extends Resource
@@ -21,8 +23,13 @@ class ReviewResource extends Resource
             ID::make()->sortable(),
             Text::make("Имя", "name"),
             Text::make("Имя(англ)", "name_en"),
-            Text::make("Дата создания", "date")
+            File::make("Фото", "img")
+                ->allowedExtensions(['jpg', 'gif', 'png'])
+                ->removable()
             ,
+            Textarea::make("Описание", "description")->hideOnIndex(),
+            Textarea::make("Описание(англ)", "description_en")->hideOnIndex(),
+            Text::make("Дата создания", "date"),
         ];
     }
 

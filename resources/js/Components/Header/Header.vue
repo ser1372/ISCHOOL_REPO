@@ -9,9 +9,15 @@ const toggleNav = () => {
 	return showMenu.value = !showMenu.value;
 }
 
+const hideNav = () => {
+	if (window.innerWidth <= 780) { // проверка ширины окна, скрытие меню для мобильных устройств
+		return showMenu.value = false;
+	}
+}
+
 </script>
 <template>
-	<header class="max-w-screen-2xl mx-auto px-4 mt-8">
+	<header class="max-w-screen-6xl mx-auto bg-[#F4EFFF] pb-1 z-[9998] px-4 2xl:px-[370px] pt-4 fixed w-full">
 		<div class="flex justify-between items-center">
 			<Logo/>
 			<nav>
@@ -24,27 +30,27 @@ const toggleNav = () => {
                             lg:flex lg:space-y-0 lg:flex-row lg:items-center lg:space-x-10 lg:mt-0
                           ">
 					<li>
-						<a class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2"
+						<a @click="hideNav" class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2"
 							 href="#advantages">{{ $t('menu.advantages') }}</a>
 					</li>
 					<li>
-						<a class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2"
+						<a @click="hideNav" class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2"
 							 href="#speakingclub">{{ $t('menu.club') }}</a>
 					</li>
 					<li>
-						<a class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2"
+						<a @click="hideNav" class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2"
 							 href="#price">{{ $t('menu.price') }}</a>
 					</li>
 					<li>
-						<a class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2"
+						<a @click="hideNav" class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2"
 							 href="#reviews">{{ $t('menu.feedback') }}</a>
 					</li>
 					<li>
-						<a class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2"
+						<a @click="hideNav" class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2"
 							 href="#cooperation">{{ $t('menu.cooperation') }}</a>
 					</li>
 					<li>
-						<a class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2"
+						<a @click="hideNav" class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2"
 							 href="#contacts">{{ $t('menu.contacts') }}</a>
 					</li>
 				</ul>

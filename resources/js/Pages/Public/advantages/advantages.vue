@@ -30,3 +30,7 @@ const state = props.advantages
 		</DescriptionMain>
 	</section>
 </template>
+
+<style scoped>
+
+</style>

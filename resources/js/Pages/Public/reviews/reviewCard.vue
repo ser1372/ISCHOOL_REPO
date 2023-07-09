@@ -20,7 +20,7 @@ const getLang = () => {
 			<div class="flex justify-between items-center">
 				<div>
 					<img class="rounded-[50%] m-[20px]"
-							 :src=" '/storage/club/'+ review.img + '.png'"
+							 :src=" '/storage/'+ review.img"
 							 width="120" height="120"
 							 :alt="review.name">
 				</div>

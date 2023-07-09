@@ -120,11 +120,11 @@ defineExpose({openModal, closeModal}); // Экспонируем эти функ
 							<form @submit.prevent="submitForm">
 								<div class="mb-[24px]">
 									<label for="name">{{ $t("modal.form_data.name") }}</label>
-									<Input v-model="formData.name" id="name" placeholder="Наприклад, Олег Микитенко"/>
+									<Input v-model="formData.name" id="name" :placeholder="$t('modal.placeholders.name')"/>
 								</div>
 								<div class="mb-[24px]">
 									<label for="tel">{{ $t("modal.form_data.tel") }}</label>
-									<Input v-model="formData.tel" id="tel" placeholder="+380 XXX XXX XXX aбо @nickname"/>
+									<Input v-model="formData.tel" id="tel" :placeholder="$t('modal.placeholders.tel')"/>
 								</div>
 								<div class="mb-[24px]">
 									<label for="email">E-mail</label>
