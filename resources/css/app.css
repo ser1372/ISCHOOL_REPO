@@ -19,6 +19,19 @@ body {
 }
 
 
+#advantages::before,
+#speakingclub::before,
+#price::before,
+#reviews::before,
+#cooperation::before {
+    content: "";
+    display: block;
+    height: 80px; /* Adjust as necessary */
+    margin-top: -50px; /* Should be the same as height */
+    visibility: hidden;
+}
+
+
 /* Общий стиль для скроллбара */
 ::-webkit-scrollbar {
     width: 10px; /* Ширина вертикального скроллбара */
