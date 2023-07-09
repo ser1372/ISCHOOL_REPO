@@ -3,7 +3,7 @@ name: Merge to main
 on:
   push:
     branches:
-      - main-second  # Replace with your development branch
+      - main-second  # This should match your development branch
 
 jobs:
   build:
@@ -13,10 +13,10 @@ jobs:
       - name: Checkout dev code
         uses: actions/checkout@v2
         with:
-          ref: main-second # Replace with your development branch
+          ref: main-second # This should match your development branch
 
       - name: Push to main
         run: |
           git checkout main || git checkout -b main
-          git merge --no-ff --allow-unrelated-histories dev  # Replace with your development branch
+          git merge --no-ff --allow-unrelated-histories main-second  # This should match your development branch
           git push origin main
