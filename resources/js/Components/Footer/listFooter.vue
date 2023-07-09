@@ -27,11 +27,11 @@ watchEffect(() => {
 	// Обновляем свойства 'attributes' для каждого элемента списка
 	footerDataList.value = footerDataList.value.map(item => {
 		if (item.icon === 'fa-solid fa-envelope' && email.value && email.value.value) {
-			return {...item, attributes: email.value.value};
+			return {...item, attributes: "<a href='mailto:" + email.value.value + "'>" + email.value.value + "</a>"};
 		} else if (item.icon === 'fa-solid fa-phone' && telephone.value && telephone.value.value) {
-			return {...item, attributes: telephone.value.value};
+			return {...item, attributes: "<a href='tel:" + telephone.value.value + "'>" + telephone.value.value + "</a>"};
 		} else if (item.icon === 'fa-brands fa-telegram' && telegram.value && telegram.value.value) {
-			return {...item, attributes: telegram.value.value};
+			return {...item, attributes: "<a href='" + telegram.value.value + "'>" + telegram.value.value + "</a>"};
 		} else {
 			return item;
 		}
@@ -44,7 +44,7 @@ watchEffect(() => {
 	<ul class="grid grid-cols-1 lg:grid-cols-2 gap-4">
 		<li v-for="item in footerDataList" class="flex gap-[24px]">
 			<i :class="item.icon" style="color: #ffffff;"></i>
-			<p class="text-white text-base">{{ item.attributes }}</p>
+			<p class="text-white text-base" v-html="item.attributes"></p>
 		</li>
 	</ul>
 </template>

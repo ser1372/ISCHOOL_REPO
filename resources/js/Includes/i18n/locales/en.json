@@ -64,6 +64,10 @@
       "tel": "Phone number or nickname in Telegram via @",
       "how": "How did you hear about us?"
     },
+    "placeholders": {
+      "name": "For example, Oleg Nikitenko",
+      "tel": "+380 XXX XXX XXX XXX or @nickname"
+    },
     "submit": "Send"
   },
   "swal": {

@@ -22,7 +22,7 @@ const props = defineProps({
 
 <template>
 	<Header/>
-	<main class="max-w-7xl mx-auto pt-[4rem] md:pt-[4rem] px-3 h-full">
+	<main id="main" class="max-w-7xl mx-auto pt-[4rem] md:pt-[4rem] px-3 h-full">
 		<slot></slot>
 	</main>
 	<Footer :telephone="props.telephone" :email="props.email" :telegram="props.telegram"/>
