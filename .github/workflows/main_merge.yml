@@ -15,8 +15,15 @@ jobs:
         with:
           ref: main-second # This should match your development branch
 
+      - name: Set up Git
+        run: |
+          git config --global user.email "ser1372@ukr.net"
+          git config --global user.name "ser1372"
+
       - name: Push to main
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # Make sure to replace 'ACCESS_TOKEN' with your actual PAT name in the secrets
         run: |
           git checkout main || git checkout -b main
           git merge --no-ff --allow-unrelated-histories main-second  # This should match your development branch
-          git push origin main
+          git push https://${ACCESS_TOKEN}@github.com/<your-username>/ISCHOOL_REPO.git main
