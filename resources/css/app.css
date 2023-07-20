@@ -28,7 +28,7 @@ body {
     display: block;
     height: 80px; /* Adjust as necessary */
     margin-top: -50px; /* Should be the same as height */
-    
+
     visibility: hidden;
 }
 
@@ -216,6 +216,10 @@ body {
     .modal {
         background-image: none;
     }
+}
+
+.no-scroll {
+    overflow: hidden;
 }
 
 

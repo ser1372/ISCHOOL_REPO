@@ -36,6 +36,7 @@ class HomeController extends Controller
         $telegram = $this->optionsRepository->getOption("telegram");
         $telephone = $this->optionsRepository->getOption("telephone");
         $email = $this->optionsRepository->getOption("email");
+        $linkTutor = $this->optionsRepository->getOption("form_link");
         return view('layouts.master', [
             'advantages' => $advantages,
             'prices' => $prices,
@@ -44,7 +45,8 @@ class HomeController extends Controller
             'video' => $video,
             'telegram' => $telegram,
             'telephone' => $telephone,
-            'email' => $email
+            'email' => $email,
+            'link' => $linkTutor
         ]);
     }
 

@@ -17,7 +17,7 @@ const hideNav = () => {
 
 </script>
 <template>
-	<header class="max-w-screen-6xl mx-auto bg-[#F4EFFF] pb-1 z-[9998] px-4 2xl:px-[370px] pt-4 fixed w-full">
+	<header class="max-w-screen-6xl mx-auto bg-[#F4EFFF] pb-[1rem] z-[100] px-4 2xl:px-[370px] pt-4 fixed w-full">
 		<div class="flex justify-between items-center">
 			<Logo/>
 			<nav>

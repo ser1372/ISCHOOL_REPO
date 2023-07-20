@@ -65,6 +65,13 @@ const submitForm = async () => {
 	}
 };
 
+
+const outerClick = e => {
+	if (!e.target.closest('.modal')) {
+		closeModal();
+	}
+};
+
 function resetData() {
 	formData.name = '';
 	formData.tel = '';
@@ -79,10 +86,12 @@ const isOpen = ref(false);
 
 const openModal = () => {
 	isOpen.value = true;
+	document.body.classList.add('no-scroll');
 };
 
 const closeModal = () => {
 	isOpen.value = false;
+	document.body.classList.remove('no-scroll');
 };
 
 const handleEscape = e => {
@@ -107,7 +116,8 @@ defineExpose({openModal, closeModal}); // Экспонируем эти функ
 <template>
 	<transition name="modal">
 		<div v-if="isOpen" :key="isOpen"
-				 class="z-[9998] bg-black bg-opacity-50 w-full h-full flex justify-center items-center fixed top-0 left-0">
+				 class="z-[9998] bg-black bg-opacity-50 w-full h-full flex justify-center items-center fixed top-0 left-0"
+				 @click="outerClick">
 			<div class="bg-white p-[20px] pb-[65px] m-[20px]  rounded-[36px] w-[1100px] ">
 				<button class="float-right text-[40px]" @click="closeModal">X</button>
 				<div class="max-w-7xl modal mt-[40px] lg:px-[5rem] mx-auto">
@@ -132,7 +142,7 @@ defineExpose({openModal, closeModal}); // Экспонируем эти функ
 								</div>
 								<div class="mb-[24px]">
 									<label for="source">{{ $t("modal.form_data.how") }}</label>
-									<select v-model="formData.source" id="source"
+									<select v-model="formData.source" required id="source"
 													class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
 										<option value="Telegram">Telegram</option>
 										<option value="Instagram">Instagram</option>

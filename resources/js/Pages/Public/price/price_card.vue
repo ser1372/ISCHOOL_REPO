@@ -1,7 +1,7 @@
 <script setup>
 import {defineProps, ref} from "vue";
 import Button from '../../../../js/Components/Button.vue';
-import Modal from '../../../../js/Components/Modal/Modal.vue';
+import Modal from "@/Components/Modal/Modal.vue";
 
 let modalRef = ref(null);
 const openModalHandler = () => {
@@ -30,11 +30,11 @@ const props = defineProps({
 	itemsDescription: {
 		type: Array,
 		default: '',
-	}
+	},
 });
+
 </script>
 <template>
-	<Modal ref="modalRef"/>
 	<h3 class="text-2xl mb-[9px] text-black font-[500] text-center" v-for="item in props.itemsLessons">{{ item }}</h3>
 	<hr/>
 	<p class="text-[50px] text-[#814AF1]  text-center font-semibold">{{ props.price }} <span
@@ -54,6 +54,7 @@ const props = defineProps({
 			{{ $t("prices.subscribe") }}
 		</Button>
 	</div>
+	<Modal ref="modalRef"/>
 </template>
 
 
