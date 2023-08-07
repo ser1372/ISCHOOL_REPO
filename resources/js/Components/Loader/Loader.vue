@@ -1,9 +1,7 @@
 <!-- LazyLoader.vue -->
 <script setup>
-import { ref, onMounted } from 'vue';
-
-const isLoading = ref(true);
-const isLoaded = ref(false);
+import {isLoaded, isLoading} from './Loader.js';
+import {onMounted, ref} from "vue";
 
 onMounted(async () => {
     try {

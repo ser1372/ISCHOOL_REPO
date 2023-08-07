@@ -5,6 +5,7 @@ namespace App\MoonShine\Resources;
 use App\Models\Option;
 use Illuminate\Database\Eloquent\Model;
 use MoonShine\Actions\FiltersAction;
+use MoonShine\Fields\File;
 use MoonShine\Fields\ID;
 use MoonShine\Fields\Text;
 use MoonShine\Resources\Resource;
@@ -17,12 +18,22 @@ class OptionResource extends Resource
 
     public function fields(): array
     {
-        return [
+        $fields = [
             ID::make()->sortable(),
-            Text::make('Имя опции', "name")
+            Text::make('Имя опции', 'name')
                 ->hideOnForm(),
             Text::make('Значение', 'value'),
         ];
+
+        if (!empty($this->item) && $this->item['id'] === 4) {
+            $fields[] = File::make('Preview', 'img')
+                ->allowedExtensions(['jpg', 'gif', 'png'])
+                ->removable()
+                ->showOnDetail();
+        }
+
+
+        return $fields;
     }
 
     public function rules(Model $item): array

@@ -1,0 +1,29 @@
+name: Merge to main
+
+on:
+  push:
+    branches:
+      - main-second
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout dev code
+        uses: actions/checkout@v2
+        with:
+          ref: main-second
+
+      - name: Set up Git
+        run: |
+          git config --global user.email "ser1372@ukr.net"
+          git config --global user.name "ser1372"
+
+      - name: Push to main
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        run: |
+          git checkout main || git checkout -b main
+          git merge --no-ff --allow-unrelated-histories main-second  # This should match your development branch
+          git push https://${ACCESS_TOKEN}@github.com/ser1372/ISCHOOL_REPO.git main

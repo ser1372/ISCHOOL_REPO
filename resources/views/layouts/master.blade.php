@@ -22,7 +22,7 @@
             <reviews-component :reviews="{{ json_encode($reviews) }}"></reviews-component>
             <learn-component :learn="{{ json_encode($learn) }}"></learn-component>
             <speak-free-component></speak-free-component>
-            <cooperation-component></cooperation-component>
+            <cooperation-component :link="{{json_encode($link)}}"></cooperation-component>
         </master-layout>
     </loader-component>
 </div>

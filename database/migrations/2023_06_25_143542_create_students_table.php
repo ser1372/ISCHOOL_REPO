@@ -16,8 +16,8 @@ return new class extends Migration {
             $table->string('city')->nullable();
             $table->string('country')->nullable();
             $table->string('phone_or_telegram');
-            $table->string('email');
-            $table->string('source');
+            $table->string('email')->nullable();
+            $table->string('source')->nullable();
             $table->timestamps();
         });
     }

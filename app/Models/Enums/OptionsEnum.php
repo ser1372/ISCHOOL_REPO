@@ -20,6 +20,10 @@ class OptionsEnum
         [
             'name' => 'video',
             'value' => 'http://media.w3.org/2010/05/sintel/trailer.mp4',
-        ]
+        ],
+        [
+            'name' => 'form_link',
+            'value' => 'https://www.google.com/intl/ru_ua/forms/about/',
+        ],
     ];
 }
