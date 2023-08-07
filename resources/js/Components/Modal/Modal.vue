@@ -16,6 +16,11 @@ const formData = reactive({
 	country: '',
 });
 
+let errors = reactive({
+	name: '',
+	tel: '',
+});
+
 const submitForm = async () => {
 	try {
 		// Запрос к ipinfo.io для получения информации о городе и стране
@@ -30,39 +35,52 @@ const submitForm = async () => {
 			city,
 			country,
 		});
+
 		resetData();
 		closeModal();
-
-		Swal.fire({
-			title: t("swal.title_success"),
-			icon: 'success',
-			width: 600,
-			padding: '3em',
-			color: '#716add',
-			background: '#fff',
-			backdrop: `
-    rgba(0,0,123,0.4)
-    url("https://sweetalert2.github.io/images/nyan-cat.gif")
-    left top
-    no-repeat
-  `
-		});
+		callSwalSuccess();
 	} catch (error) {
-		Swal.fire({
-			title: t("swal.title_error"),
-			icon: 'error',
-			width: 600,
-			padding: '3em',
-			color: '#716add',
-			background: '#fff',
-			backdrop: `
-    rgba(0,0,123,0.4)
-    left top
-    no-repeat
-  `
-		});
-		console.error(error);
+		if (error.response.status === 422) {
+			errors.tel = error.response.data.errors.tel;
+			errors.name = error.response.data.errors.name;
+		} else {
+			closeModal();
+			callSwalError();
+			console.error(error);
+		}
 	}
+};
+const callSwalError = () => {
+	Swal.fire({
+		title: t("swal.title_error"),
+		icon: 'error',
+		width: 600,
+		padding: '3em',
+		color: '#716add',
+		background: '#fff',
+		backdrop: `
+            rgba(0,0,123,0.4)
+            left top
+            no-repeat
+          `
+	});
+};
+
+const callSwalSuccess = () => {
+	Swal.fire({
+		title: t("swal.title_success"),
+		icon: 'success',
+		width: 600,
+		padding: '3em',
+		color: '#716add',
+		background: '#fff',
+		backdrop: `
+            rgba(0,0,123,0.4)
+            url("https://sweetalert2.github.io/images/nyan-cat.gif")
+            left top
+            no-repeat
+          `
+	});
 };
 
 
@@ -80,7 +98,6 @@ function resetData() {
 	formData.city = '';
 	formData.country = '';
 }
-
 
 const isOpen = ref(false);
 
@@ -116,7 +133,7 @@ defineExpose({openModal, closeModal}); // Экспонируем эти функ
 <template>
 	<transition name="modal">
 		<div v-if="isOpen" :key="isOpen"
-				 class="z-[9998] bg-black bg-opacity-50 w-full h-full flex justify-center items-center fixed top-0 left-0"
+				 class="z-[9998] backdrop-blur-md bg-black bg-opacity-50 w-full h-full flex justify-center items-center fixed top-0 left-0"
 				 @click="outerClick">
 			<div class="bg-white p-[20px] pb-[65px] m-[20px]  rounded-[36px] w-[1100px] ">
 				<button class="float-right text-[40px]" @click="closeModal">X</button>
@@ -130,19 +147,24 @@ defineExpose({openModal, closeModal}); // Экспонируем эти функ
 							<form @submit.prevent="submitForm">
 								<div class="mb-[24px]">
 									<label for="name">{{ $t("modal.form_data.name") }}</label>
-									<Input v-model="formData.name" id="name" :placeholder="$t('modal.placeholders.name')"/>
+									<Input v-model="formData.name" id="name"
+												 :placeholder="$t('modal.placeholders.name')" required/>
+									<span class="text-red-600" v-show="errors.name">{{ errors.name[0] }}</span>
 								</div>
 								<div class="mb-[24px]">
 									<label for="tel">{{ $t("modal.form_data.tel") }}</label>
-									<Input v-model="formData.tel" id="tel" :placeholder="$t('modal.placeholders.tel')"/>
+									<Input v-model="formData.tel" id="tel" :placeholder="$t('modal.placeholders.tel')"
+												 required/>
+									<span class="text-red-600" v-show="errors.tel">{{ errors.tel[0] }}</span>
 								</div>
 								<div class="mb-[24px]">
 									<label for="email">E-mail</label>
-									<Input v-model="formData.email" id="email" type="email" placeholder="example@gmail.com"/>
+									<Input v-model="formData.email" id="email" type="email"
+												 placeholder="example@gmail.com"/>
 								</div>
 								<div class="mb-[24px]">
 									<label for="source">{{ $t("modal.form_data.how") }}</label>
-									<select v-model="formData.source" required id="source"
+									<select v-model="formData.source" id="source"
 													class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
 										<option value="Telegram">Telegram</option>
 										<option value="Instagram">Instagram</option>

@@ -9,8 +9,9 @@ const props = defineProps({
 });
 </script>
 <template>
-	<div v-if="props.video.value !=='' ">
-		<video loop controls class="absolute left-0 w-full lg:h-[900px] object-cover">
+	<div v-if="props.video.value !== ''">
+		<video loop controls class="absolute left-0 w-full lg:h-[900px] object-cover"
+					 :poster="'/storage/' + props.video.img">
 			<source type="video/mp4" :src="props.video.value">
 		</video>
 		<div class="lg:h-[62.5rem] sm:h-[31.5rem] h-[16.5rem]"></div>

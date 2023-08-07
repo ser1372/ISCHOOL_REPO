@@ -6,11 +6,19 @@ import BurgerButton from './BurgerButton.vue';
 
 let showMenu = ref(false);
 const toggleNav = () => {
+
+	if (!showMenu.value) {
+		document.body.classList.add('no-scroll');
+	} else {
+		document.body.classList.remove('no-scroll');
+	}
+
 	return showMenu.value = !showMenu.value;
 }
 
 const hideNav = () => {
-	if (window.innerWidth <= 780) { // проверка ширины окна, скрытие меню для мобильных устройств
+	if (window.innerWidth <= 950) { // проверка ширины окна, скрытие меню для мобильных устройств
+		document.body.classList.remove('no-scroll');
 		return showMenu.value = false;
 	}
 }
@@ -21,16 +29,17 @@ const hideNav = () => {
 		<div class="flex justify-between items-center">
 			<Logo/>
 			<nav>
-				<ul :class="showMenu ? 'flex absolute  w-full h-[80vh] bg-white top-0 left-0 z-10' : 'hidden'"
+				<ul :class="showMenu ? 'flex absolute h-[1500px]  w-full backdrop-blur-[18px] h-[80vh] top-0 left-0 z-10' : 'hidden'"
 						class="
-                            flex-col
-                            pt-8
-                            lg:pt-0
-                            space-y-4
-                            lg:flex lg:space-y-0 lg:flex-row lg:items-center lg:space-x-10 lg:mt-0
-                          ">
+									flex-col
+									pt-8
+									lg:pt-0
+									space-y-4
+									lg:flex lg:space-y-0 lg:flex-row lg:items-center lg:space-x-10 lg:mt-0
+								">
 					<li>
-						<a @click="hideNav" class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2"
+						<a @click="hideNav"
+							 class="font-medium whitespace-nowrap text-lg lg:text-base px-4 py-2"
 							 href="#advantages">{{ $t('menu.advantages') }}</a>
 					</li>
 					<li>

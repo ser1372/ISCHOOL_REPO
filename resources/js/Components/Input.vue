@@ -10,6 +10,7 @@ const props = defineProps({
 		type: String,
 		default: '',
 	},
+	
 	modelValue: {
 		type: String,
 		default: '',
@@ -28,5 +29,5 @@ const updateValue = (event) => {
 				 :value="props.modelValue"
 				 @input="updateValue"
 				 class="rounded-[8px] border border-[#F2F4F5] bg-[#F2F4F5] w-full focus:ring-[#814AF1]"
-				 :placeholder="props.placeholder" required>
+				 :placeholder="props.placeholder">
 </template>

@@ -34,8 +34,9 @@ return [
         ],
         'footer' => ''
     ],
+    //'ru','en'
     'locales' => [
-        'ru', 'en'
+        'ru'
     ],
     'middlewares' => [],
     'tinymce' => [

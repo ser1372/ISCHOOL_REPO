@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use MoonShine\Actions\FiltersAction;
 use MoonShine\Fields\ID;
 use MoonShine\Fields\Text;
+use MoonShine\Metrics\ValueMetric;
 use MoonShine\Resources\Resource;
+
 
 class StudentResource extends Resource
 {
@@ -31,6 +33,15 @@ class StudentResource extends Resource
     public function rules(Model $item): array
     {
         return [];
+    }
+
+
+    public function metrics(): array
+    {
+        return [
+            ValueMetric::make('Количество заявок за все время')
+                ->value(Student::query()->count())
+        ];
     }
 
     public function search(): array

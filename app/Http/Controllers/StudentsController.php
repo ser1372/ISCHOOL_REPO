@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Public\StudentsRequest;
 use App\Repositories\StudentsRepository;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
 class StudentsController extends Controller
 {
@@ -15,14 +15,9 @@ class StudentsController extends Controller
         $this->studentsRepository = app(StudentsRepository::class);
     }
 
-    protected function returnResponse(array $data): JsonResponse
+    public function create(StudentsRequest $request): JsonResponse
     {
-        return response()->json($data);
-    }
-
-    public function create(Request $request): JsonResponse
-    {
-        return $this->returnResponse([
+        return response()->json([
             'success' => true,
             'result' => $this->studentsRepository->create($request->all()),
         ]);
