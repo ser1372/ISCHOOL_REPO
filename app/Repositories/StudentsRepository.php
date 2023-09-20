@@ -9,19 +9,19 @@ class StudentsRepository extends CoreRepository
 {
     private mixed $telegramServices;
 
-    public function __construct()
+    final public function __construct()
     {
         parent::__construct();
         $this->telegramServices = app(TelegramServices::class);
     }
 
-    protected function getModelClass()
+    final protected function getModelClass()
     {
         return Model::class;
     }
 
 
-    public function create($data)
+    final public function create($data)
     {
         $model = new $this->model;
         $model->name = $data['name'];

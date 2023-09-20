@@ -1,20 +1,29 @@
 <?php
 
-namespace  App\Repositories;
-use App\Models\Price as Model;
+namespace App\Repositories;
 
-class PricesRepository extends CoreRepository{
-    public function __construct()
+use App\Models\Price as Model;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
+
+class PricesRepository extends CoreRepository
+{
+    final public function __construct()
     {
         parent::__construct();
     }
 
-    protected function getModelClass()
+    final protected function getModelClass()
     {
         return Model::class;
     }
 
-    public function getAll(){
+    /**
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
+     */
+    final public function getAll()
+    {
         return $this->model->get();
     }
 }

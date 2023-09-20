@@ -10,12 +10,12 @@ class StudentsController extends Controller
 {
     private mixed $studentsRepository;
 
-    public function __construct()
+    final public function __construct()
     {
         $this->studentsRepository = app(StudentsRepository::class);
     }
 
-    public function create(StudentsRequest $request): JsonResponse
+    final public function create(StudentsRequest $request): JsonResponse
     {
         return response()->json([
             'success' => true,

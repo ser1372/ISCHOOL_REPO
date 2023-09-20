@@ -38,7 +38,7 @@ const currentScreen = getCurrentScreenWidth();
 
 <template>
 	<Modal ref="modalRef"/>
-	<div class="flex justify-center">
+	<section class="flex justify-center">
 		<div class="block flex-wrap md:flex-nowrap md:flex justify-between items-center max-[425px]:justify-end">
 			<div class="flex flex-col gap-10 relative">
 				<h1 class="text-6xl font-medium max-w-[650px]">
@@ -60,5 +60,5 @@ const currentScreen = getCurrentScreenWidth();
 				<Imagebanner/>
 			</div>
 		</div>
-	</div>
+	</section>
 </template>

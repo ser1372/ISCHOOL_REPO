@@ -2,11 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\AdvantageRespository;
-use App\Repositories\LearnRepository;
-use App\Repositories\OptionRepository;
-use App\Repositories\PricesRepository;
-use App\Repositories\ReviewRepository;
+use App\Repositories\{AdvantageRespository, LearnRepository, OptionRepository, PricesRepository, ReviewRepository};
 
 class HomeController extends Controller
 {
@@ -29,7 +25,7 @@ class HomeController extends Controller
     final public function index()
     {
         $advantages = $this->advnatagesRepostiory->getAll();
-        $prices = $this->pricesRepository->getAll();
+        $this->pricesRepository->getAll();
         $reviews = $this->reviewRepository->getAll();
         $learn = $this->learnRepository->getAll();
         $video = $this->optionsRepository->getOption("video");
@@ -37,6 +33,7 @@ class HomeController extends Controller
         $telephone = $this->optionsRepository->getOption("telephone");
         $email = $this->optionsRepository->getOption("email");
         $linkTutor = $this->optionsRepository->getOption("form_link");
+        $prices = $this->pricesRepository->getAll();
         return view('layouts.master', [
             'advantages' => $advantages,
             'prices' => $prices,

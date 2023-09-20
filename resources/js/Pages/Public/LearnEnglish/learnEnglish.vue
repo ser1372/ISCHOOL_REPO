@@ -12,10 +12,10 @@ const props = defineProps({
 </script>
 
 <template>
-	<div class="flex flex-col md:flex-row md:gap-4 h-full">
+	<section class="flex flex-col md:flex-row md:gap-4 h-full">
 		<LearnCardMain v-for="item in props.learn" :item="item" class="md:w-1/2"></LearnCardMain>
 		<div class="grid md:grid-cols-2 gap-4 md:w-1/2">
 			<LearnCard v-for="(item, index) in props.learn" :item="item" :index="index" :key="item.id"></LearnCard>
 		</div>
-	</div>
+	</section>
 </template>

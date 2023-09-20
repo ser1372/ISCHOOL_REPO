@@ -1,24 +1,27 @@
 <?php
 
-namespace  App\Repositories;
+namespace App\Repositories;
+
 use App\Models\Advantage as Model;
 
-class AdvantageRespository extends CoreRepository{
+class AdvantageRespository extends CoreRepository
+{
 
-    public function __construct()
+    final public function __construct()
     {
         parent::__construct();
     }
 
-    protected function getModelClass()
+    final protected function getModelClass()
     {
         return Model::class;
     }
 
 
-    public function getAll(){
+    final public function getAll()
+    {
 
-        return $this->model->get(['img','advantages_ua','advantages_en']);
+        return $this->model->get(['img', 'advantages_ua', 'advantages_en']);
     }
 
 }

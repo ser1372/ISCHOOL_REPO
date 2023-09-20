@@ -25,12 +25,10 @@ class OptionResource extends Resource
             Text::make('Значение', 'value'),
         ];
 
-        if (!empty($this->item) && $this->item['id'] === 4) {
-            $fields[] = File::make('Preview', 'img')
-                ->allowedExtensions(['jpg', 'gif', 'png'])
-                ->removable()
-                ->showOnDetail();
-        }
+        $fields[] = File::make('Preview', 'img')
+            ->allowedExtensions(['jpg', 'gif', 'png'])
+            ->removable()
+            ->showOnDetail();
 
 
         return $fields;

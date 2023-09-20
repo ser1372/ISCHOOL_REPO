@@ -7,14 +7,16 @@ import {ItemsDescription, ItemsLessons, ItemsLevel, ItemsLevelEnglish} from './j
 
 const props = defineProps({
 	prices: {
-		type: Array,
+		type: String,
 		required: true,
 	}
 });
 
 let currency = reactive({value: 'UAH'});
-const arrPriceUAH = props.prices.map(price => price.price_uah);
-const arrPriceGBP = props.prices.map(price => price.price_gbp);
+let price = JSON.parse(props.prices);
+
+const arrPriceUAH = price.map(price => price.price_uah);
+const arrPriceGBP = price.map(price => price.price_gbp);
 
 function chunkArray(array, chunkSize) {
 	let results = [];

@@ -7,17 +7,17 @@ use App\Models\Option as Model;
 class OptionRepository extends CoreRepository
 {
 
-    public function __construct()
+    final public function __construct()
     {
         parent::__construct();
     }
 
-    protected function getModelClass()
+    final protected function getModelClass()
     {
         return Model::class;
     }
 
-    public function getOption($name)
+    final public function getOption($name)
     {
         return $this->model->where('name', $name)->first();
     }

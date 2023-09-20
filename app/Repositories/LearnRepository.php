@@ -7,18 +7,18 @@ use App\Models\Learn as Model;
 class LearnRepository extends CoreRepository
 {
 
-    public function __construct()
+    final public function __construct()
     {
         parent::__construct();
     }
 
-    protected function getModelClass()
+    final protected function getModelClass()
     {
         return Model::class;
     }
 
 
-    public function getAll()
+    final public function getAll()
     {
         return $this->model->get();
     }

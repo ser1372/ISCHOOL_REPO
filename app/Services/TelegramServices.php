@@ -4,7 +4,7 @@ namespace App\Services;
 class TelegramServices
 {
 
-    public function telegramSendMessage($chatId, $msg, $token = '6153244256:AAFWKB1Vc6lmSUJPjUu-PAim6gYk_-cD4Lk')
+    final public function telegramSendMessage($chatId, $msg, $token = '6153244256:AAFWKB1Vc6lmSUJPjUu-PAim6gYk_-cD4Lk')
     {
         if (!empty($chatId)) {
             $url = "https://api.telegram.org/bot{$token}/sendMessage?";
@@ -14,5 +14,5 @@ class TelegramServices
         }
         return false;
     }
-
+    
 }
