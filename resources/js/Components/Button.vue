@@ -1,18 +1,20 @@
 <script setup>
 defineProps({
-    type: {
-        type: String,
-        default: 'submit',
-    },
-    active: {
-        type: Boolean,
-        default: false,
-    }
+	type: {
+		type: String,
+		default: 'submit',
+	},
+	active: {
+		type: Boolean,
+		default: false,
+	}
 });
+
+console.log(1);
 </script>
 <template>
-    <button :type="type"
-            class="
+	<button :type="type"
+					class="
             rounded-xl
             text-lg
             text-[#FFFFFF]
@@ -32,10 +34,10 @@ defineProps({
             active:to-purple-900
             active:text-[#FFFFFF]
         "
-            :class="{
+					:class="{
             'bg-[#814AF1]' : !active
         }"
-    >
-        <slot/>
-    </button>
+	>
+		<slot/>
+	</button>
 </template>
