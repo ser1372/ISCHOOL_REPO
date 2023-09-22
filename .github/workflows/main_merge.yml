@@ -1,29 +1,20 @@
-name: Merge to main
-
-on:
-  push:
-    branches:
-      - main-second
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout dev code
-        uses: actions/checkout@v2
-        with:
-          ref: main-second
-
-      - name: Set up Git
-        run: |
-          git config --global user.email "ser1372@ukr.net"
-          git config --global user.name "ser1372"
-
-      - name: Push to main
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        run: |
-          git checkout main || git checkout -b main
-          git merge --no-ff --allow-unrelated-histories main-second  # This should match your development branch
-          git push https://${ACCESS_TOKEN}@github.com/ser1372/ISCHOOL_REPO.git main
+#on:
+#  push:
+#    branches:
+#      - main-second
+#  workflow_dispatch:
+#
+#jobs:
+#  run_pull:
+#    name: run pull
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: install ssh keys
+#        run: |
+#          install -m 600 -D /dev/null ~/.ssh/id_rsa
+#          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+#          ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
+#      - name: connect and pull
+#        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /home3/ischoolc/i-school.com.ua && git pull && exit"
+#      - name: cleanup
+#        run: rm -rf ~/.ssh

@@ -61,12 +61,12 @@
     "write": "Fill out this short form and we will contact you shortly. It will take no more than 5 minutes.",
     "form_data": {
       "name": "Name and surname",
-      "tel": "Phone number or nickname in Telegram via @",
+      "tel": "Phone number or nickname in Telegram",
       "how": "How did you hear about us?"
     },
     "placeholders": {
       "name": "For example, Oleg Nikitenko",
-      "tel": "+380 XXX XXX XXX XXX or @nickname"
+      "tel": "+380 XXX XXX XXX XXX or nickname"
     },
     "submit": "Send"
   },

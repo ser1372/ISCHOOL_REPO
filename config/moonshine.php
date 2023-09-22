@@ -11,7 +11,7 @@ return [
     'logo' => env('MOONSHINE_LOGO', '/storage/logo.png'),
 
     'route' => [
-        'prefix' => env('MOONSHINE_ROUTE_PREFIX', 'admin'),
+        'prefix' => env('MOONSHINE_ROUTE_PREFIX', '/admin'),
         'middleware' => ['web', 'moonshine'],
         'custom_page_slug' => 'custom_page',
         'notFoundHandler' => MoonShineNotFoundException::class
@@ -49,6 +49,6 @@ return [
     ],
     'header' => null, // blade path
     'footer' => [
-        'copyright' => 'Made with ❤️ by <a href="https://ischool.local" class="font-semibold text-purple hover:text-pink" target="_blank">Ischool</a>',
+        'copyright' => 'Made with ❤️ by <a href="https://i-school.com.ua" class="font-semibold text-purple hover:text-pink" target="_blank">Ischool</a>',
     ]
 ];
