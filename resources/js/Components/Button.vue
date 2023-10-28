@@ -9,8 +9,6 @@ defineProps({
 		default: false,
 	}
 });
-
-console.log(1);
 </script>
 <template>
 	<button :type="type"
