@@ -3,23 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Public\StudentsRequest;
-use App\Repositories\StudentsRepository;
+use App\Services\StudentsServices;
 use Illuminate\Http\JsonResponse;
+use Telegram\Bot\Exceptions\TelegramSDKException;
 
 class StudentsController extends Controller
 {
-    private mixed $studentsRepository;
+    private StudentsServices $studentsServices;
 
-    final public function __construct()
+    final public function __construct(StudentsServices $studentsServices)
     {
-        $this->studentsRepository = app(StudentsRepository::class);
+        $this->studentsServices = $studentsServices;
     }
 
-    final public function create(StudentsRequest $request): JsonResponse
+    /**
+     * @throws TelegramSDKException
+     */
+    final public function store(StudentsRequest $request): JsonResponse
     {
         return response()->json([
-            'success' => true,
-            'result' => $this->studentsRepository->create($request->all()),
+            'result' => $this->studentsServices->create($request->all()),
         ]);
     }
 }

@@ -3,11 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ischool</title>
+    <title>{{ env('APP_NAME') }}</title>
     <link rel="icon" href="/storage/logoicon.jpg" type="image/x-icon">
+    @vite('resources/js/app.js')
 </head>
 <body>
 <div id="app">
+    @include('components.google')
     <loader-component>
         <master-layout
                 :telegram="{{json_encode($telegram)}}"
@@ -22,11 +24,9 @@
             <reviews-component :reviews="{{ json_encode($reviews) }}"></reviews-component>
             <learn-component :learn="{{ json_encode($learn) }}"></learn-component>
             <speak-free-component></speak-free-component>
-            <cooperation-component :link="{{json_encode($link)}}"></cooperation-component>
+            <cooperation-component :link="{{json_encode($linkTutor)}}"></cooperation-component>
         </master-layout>
     </loader-component>
 </div>
-@vite('resources/js/app.js')
-@include('components.google')
 </body>
 </html>

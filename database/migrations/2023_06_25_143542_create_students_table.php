@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->string('phone_or_telegram');
             $table->string('email')->nullable();
             $table->string('source')->nullable();
+            $table->boolean('appeared')->default(1);
             $table->timestamps();
         });
     }

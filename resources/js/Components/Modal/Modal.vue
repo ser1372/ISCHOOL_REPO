@@ -2,10 +2,12 @@
 import {defineExpose, onMounted, onUnmounted, reactive, ref} from 'vue';
 import Input from '@/Components/Input.vue';
 import Button from '@/Components/Button.vue';
+import LittleLoader from "@/Components/Loader/LittleLoader.vue";
 import Swal from 'sweetalert2';
 import {useI18n} from 'vue-i18n';
 
 const {t} = useI18n();
+const isLoading = ref(false);
 
 const formData = reactive({
 	name: '',
@@ -23,11 +25,12 @@ let errors = reactive({
 
 const submitForm = async () => {
 	try {
+		setLoader();
 		// Запрос к ipinfo.io для получения информации о городе и стране
 		const ipResponse = await axios.get('https://ipinfo.io/json?token=ee4cfae6f20f02');
 		const {city, country} = ipResponse.data;
 
-		const response = await axios.post('/api/v1/student/create', {
+		const response = await axios.post('api/student', {
 			name: formData.name,
 			tel: formData.tel,
 			email: formData.email,
@@ -38,18 +41,39 @@ const submitForm = async () => {
 
 		resetData();
 		closeModal();
+
+		if (!isOpen.value) {
+			unsetLoader();
+		}
+
 		callSwalSuccess();
+
 	} catch (error) {
-		if (error.response.status === 422) {
+		console.log(error);
+		if (error.response.status && error.response.status === 422) {
 			errors.tel = error.response.data.errors.tel;
 			errors.name = error.response.data.errors.name;
 		} else {
 			closeModal();
+
+			if (!isOpen.value) {
+				unsetLoader();
+			}
+
 			callSwalError();
 			console.error(error);
 		}
 	}
 };
+
+const setLoader = () => {
+	isLoading.value = true;
+};
+
+const unsetLoader = () => {
+	isLoading.value = false;
+};
+
 const callSwalError = () => {
 	Swal.fire({
 		title: t("swal.title_error"),
@@ -102,13 +126,13 @@ function resetData() {
 const isOpen = ref(false);
 
 const openModal = () => {
-	isOpen.value = true;
 	document.body.classList.add('no-scroll');
+	return isOpen.value = true;
 };
 
 const closeModal = () => {
-	isOpen.value = false;
 	document.body.classList.remove('no-scroll');
+	return isOpen.value = false;
 };
 
 const handleEscape = e => {
@@ -133,11 +157,17 @@ defineExpose({openModal, closeModal}); // Экспонируем эти функ
 <template>
 	<transition name="modal">
 		<div v-if="isOpen" :key="isOpen"
-				 class="z-[9998] backdrop-blur-md bg-black bg-opacity-50 w-full h-full flex justify-center items-center fixed top-0 left-0"
+				 class="z-[100] backdrop-blur-md bg-black bg-opacity-50 w-full h-full flex justify-center items-center fixed top-0 left-0"
 				 @click="outerClick">
-			<div class="bg-white p-[20px] pb-[65px] m-[20px]  rounded-[36px] w-[1100px] ">
+			<div class="bg-white p-[20px] pb-[65px] m-[20px]  rounded-[36px] w-[1100px] relative">
+				<div class="blockUI" v-if="isLoading"></div>
 				<button class="float-right text-[40px]" @click="closeModal">X</button>
 				<div class="max-w-7xl modal mt-[40px] lg:px-[5rem] mx-auto">
+					<!--LOADER-->
+					<div v-if="isLoading">
+						<LittleLoader/>
+					</div>
+					<!--END LOADER-->
 					<h2 class="text-4xl font-semibold mb-[40px]">{{ $t("modal.education") }}</h2>
 					<div class="grid lg:grid-cols-2 grid-cols-1">
 						<div class="col-1">
@@ -189,6 +219,14 @@ defineExpose({openModal, closeModal}); // Экспонируем эти функ
 
 .modal-enter, .modal-leave-to {
 	opacity: 0;
+}
+
+.blockUI {
+	background: #fff !important;
+	opacity: 0.5 !important;
+	width: 90%;
+	height: 90%;
+	position: absolute;
 }
 </style>
 

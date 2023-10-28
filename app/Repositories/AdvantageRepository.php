@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Advantage as Model;
 
-class AdvantageRespository extends CoreRepository
+class AdvantageRepository extends CoreRepository
 {
 
     final public function __construct()
